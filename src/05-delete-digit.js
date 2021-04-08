@@ -9,8 +9,28 @@
  * For n = 152, the output should be 52
  *
  */
-function deleteDigit(/* n */) {
-  throw new Error('Not implemented');
+function deleteDigit(n) {
+  const arr = n.toString().split('');
+  let arr2 = arr.map((a) => a);
+  let maxOfValue = 0;
+  let value = '';
+
+  for (let i = 0; i < arr.length; i++) {
+    arr2.splice(i, 1);
+
+    for (let j = 0; j < arr2.length; j++) {
+      value += arr2[j];
+    }
+
+    if (maxOfValue <= parseInt(value, 10)) {
+      maxOfValue = parseInt(value, 10);
+    }
+
+    arr2 = arr.map((a) => a);
+    value = '';
+  }
+
+  return maxOfValue;
 }
 
 module.exports = deleteDigit;
