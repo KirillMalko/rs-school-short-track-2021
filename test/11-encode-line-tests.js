@@ -1,4 +1,4 @@
-const assert = require('assert');
+ const assert = require('assert');
 const encodeLine = require('../src/11-encode-line');
 it.optional = require('../extensions/it-optional');
 
